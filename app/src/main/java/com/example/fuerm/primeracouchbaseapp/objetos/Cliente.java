@@ -9,8 +9,8 @@ public class Cliente {
     private String nombre; //Obligatorio
     private int telefono_fijo;
     private int telefono_movil;
-    private Apellidos apellidos; //obligatorio
-    private DireccionCliente direccionCliente;
+    private Apellidos apellidos = new Apellidos(); //obligatorio
+    private DireccionCliente direccionCliente = new DireccionCliente();
 
     class Apellidos{
         private String primer_apellido;
