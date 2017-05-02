@@ -1,4 +1,4 @@
-package com.example.fuerm.primeracouchbaseapp.objetos;
+package com.example.fuerm.gestionoficinatecnica.objetos;
 
 /**
  * Created by fuerm on 27/04/2017.

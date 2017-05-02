@@ -1,4 +1,4 @@
-package com.example.fuerm.primeracouchbaseapp;
+package com.example.fuerm.gestionoficinatecnica;
 
 import com.couchbase.lite.CouchbaseLiteException;
 import com.couchbase.lite.Database;

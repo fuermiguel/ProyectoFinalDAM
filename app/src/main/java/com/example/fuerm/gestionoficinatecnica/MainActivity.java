@@ -1,4 +1,4 @@
-package com.example.fuerm.primeracouchbaseapp;
+package com.example.fuerm.gestionoficinatecnica;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

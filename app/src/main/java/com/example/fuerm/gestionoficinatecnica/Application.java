@@ -1,4 +1,4 @@
-package com.example.fuerm.primeracouchbaseapp;
+package com.example.fuerm.gestionoficinatecnica;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

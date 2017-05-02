@@ -1,4 +1,4 @@
-package com.example.fuerm.primeracouchbaseapp.objetos;
+package com.example.fuerm.gestionoficinatecnica.objetos;
 
 //Test de introducir datos y posteriormente leerlos de los objetos usados en los documentos*/
 

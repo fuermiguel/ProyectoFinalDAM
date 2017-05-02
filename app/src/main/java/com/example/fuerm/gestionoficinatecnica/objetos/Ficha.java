@@ -1,4 +1,4 @@
-package com.example.fuerm.primeracouchbaseapp.objetos;
+package com.example.fuerm.gestionoficinatecnica.objetos;
 
 /**
  * Created by fuerm on 27/04/2017.
@@ -11,15 +11,15 @@ public class Ficha {
     private boolean accesible_discapacitados;
     private String tipo_evento;
     private String horario;
-    private Ambulancias ambulancia;
+    private Ambulancias ambulancia; //todo pensar en un arraylist de ambulancias
     private boolean venta_alcohol;
     private int numero_aseos;
-    private Aseos aseos;
+    private Aseos aseos;// todo idem
     private boolean cortar_calles;
     private int numero_inchables;
-    private Hinchables hinchables;
+    private Hinchables hinchables;// todo lo mismo que con las ambulancias
     private int numero_carpas;
-    private Carpas carpas;
+    private Carpas carpas;//todo lo mismo que con los hinchables
 
     public Ficha() {
     }

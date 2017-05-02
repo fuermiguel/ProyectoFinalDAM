@@ -1,22 +1,21 @@
-package com.example.fuerm.primeracouchbaseapp.objetos;
+package com.example.fuerm.gestionoficinatecnica.objetos;
 
 /**
  * Created by fuerm on 27/04/2017.
  */
 
 public class Facturacion {
-    private int numero_facturas;
-    private Facturas facturas;
+    private Factura factura = new Factura();
 
-    class Facturas{
+    class Factura {
         private String id_factura;
         private String cif;
-        private DireccionFacturacion direccionFacturacion;
+        private DireccionFacturacion direccionFacturacion = new DireccionFacturacion();
 
-        public Facturas() {
+        public Factura() {
         }
 
-        public Facturas(String id_factura, String cif, DireccionFacturacion direccionFacturacion) {
+        public Factura(String id_factura, String cif, DireccionFacturacion direccionFacturacion) {
             this.id_factura = id_factura;
             this.cif = cif;
             this.direccionFacturacion = direccionFacturacion;
@@ -104,5 +103,14 @@ public class Facturacion {
         public void setDireccionFacturacion(DireccionFacturacion direccionFacturacion) {
             this.direccionFacturacion = direccionFacturacion;
         }
+    }
+
+
+    public Factura getFactura() {
+        return factura;
+    }
+
+    public void setFactura(Factura factura) {
+        this.factura = factura;
     }
 }

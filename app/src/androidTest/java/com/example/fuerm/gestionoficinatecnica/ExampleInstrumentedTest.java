@@ -1,4 +1,4 @@
-package com.example.fuerm.primeracouchbaseapp;
+package com.example.fuerm.gestionoficinatecnica;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.fuerm.primeracouchbaseapp", appContext.getPackageName());
+        assertEquals("com.example.fuerm.gestionoficinatecnica", appContext.getPackageName());
     }
 }
