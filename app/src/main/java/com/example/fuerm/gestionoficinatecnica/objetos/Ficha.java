@@ -290,6 +290,9 @@ public class Ficha {
     }
 
 
+
+
+
     public String getLocalizacion() {
         return localizacion;
     }
