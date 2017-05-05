@@ -9,6 +9,7 @@ import com.couchbase.lite.Database;
 import com.couchbase.lite.Document;
 import com.couchbase.lite.Manager;
 import com.couchbase.lite.UnsavedRevision;
+import com.example.fuerm.gestionoficinatecnica.Datos.CargaDatos;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -93,9 +94,7 @@ public class Application extends AppCompatActivity {
         Document document = database.createDocument();//Genera el Id de manera automatica
         String documentId = document.getId();
         Log.d(TAG,"El identificador del documento creados es " + documentId);
-        Map<String, Object> map = new HashMap<String, Object>();
-        map.put("name","big Party");
-        map.put("location","My House");
+        Map<String, Object> map = (Map<String, Object>) new CargaDatos();
 
         /*Cuando un documento es guardado a la base de datos, se generan dos propiedades de manera
         automatica _id(identificador de documento) y _rev(identificador de revisión) que se añaden
@@ -103,6 +102,7 @@ public class Application extends AppCompatActivity {
          */
 
         try {
+            //Cargo los valores en el documento
             document.putProperties(map);
             Log.d(TAG,"Documento salvado con los nuevos datos");
         } catch (CouchbaseLiteException e) {

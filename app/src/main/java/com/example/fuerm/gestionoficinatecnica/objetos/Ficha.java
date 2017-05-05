@@ -42,7 +42,7 @@ public class Ficha {
 
     }
 
-    class Medidas {
+    public class Medidas {
         private int alto;
         private int ancho;
         private int profundo;
@@ -72,13 +72,13 @@ public class Ficha {
         }
     }
 
-    class DatosResponsable {
+    public class DatosResponsable {
         private String cif;
         private DireccionResponsable direccionResponsable = new DireccionResponsable();
         private int telefono_fijo;
         private int telefono_movil;
 
-        class DireccionResponsable {
+        public class DireccionResponsable {
             private String pais;
             private String provincia;
             private String municipio;
@@ -166,7 +166,7 @@ public class Ficha {
         }
     }
 
-    class Ambulancia {
+    public class Ambulancia {
         private String matricula;
         private String tipo;
 
@@ -190,7 +190,7 @@ public class Ficha {
         }
     }
 
-    class Aseo {
+    public class Aseo {
         private String localizacion;
         private String tipo;
 
@@ -214,7 +214,7 @@ public class Ficha {
         }
     }
 
-    class Hinchable {
+    public class Hinchable {
         private String tipo;
         private Medidas medidas = new Medidas();
         private boolean anclajes;
@@ -249,7 +249,7 @@ public class Ficha {
         }
     }
 
-    class Carpa {
+    public class Carpa {
 
         private String modelo;
         private Medidas medidas = new Medidas();

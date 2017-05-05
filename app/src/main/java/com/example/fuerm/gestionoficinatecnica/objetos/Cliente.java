@@ -12,16 +12,11 @@ public class Cliente {
     private Apellidos apellidos = new Apellidos(); //obligatorio
     private DireccionCliente direccionCliente = new DireccionCliente();
 
-    class Apellidos{
+    public class Apellidos{
         private String primer_apellido;
         private String segundo_apellido;
 
         public Apellidos() {
-        }
-
-        public Apellidos(String primer_apellido, String segundo_apellido) {
-            this.primer_apellido = primer_apellido;
-            this.segundo_apellido = segundo_apellido;
         }
 
         public String getPrimer_apellido() {
@@ -40,7 +35,7 @@ public class Cliente {
             this.segundo_apellido = segundo_apellido;
         }
     }
-    class DireccionCliente{
+    public class DireccionCliente{
         private String pais;
         private String provincia;
         private String municipio;
@@ -48,14 +43,6 @@ public class Cliente {
         private int codigo_postal;
 
         public DireccionCliente() {
-        }
-
-        public DireccionCliente(String pais, String provincia, String municipio, String calle, int codigo_postal) {
-            this.pais = pais;
-            this.provincia = provincia;
-            this.municipio = municipio;
-            this.calle = calle;
-            this.codigo_postal = codigo_postal;
         }
 
         public String getPais() {

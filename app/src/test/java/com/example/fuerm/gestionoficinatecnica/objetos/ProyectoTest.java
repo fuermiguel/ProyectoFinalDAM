@@ -5,4 +5,5 @@ package com.example.fuerm.gestionoficinatecnica.objetos;
  */
 
 public class ProyectoTest {
+
 }

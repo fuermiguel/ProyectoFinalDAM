@@ -19,10 +19,17 @@ public class ClienteTest {
         Cliente cliente = new Cliente();
         cliente.setNombre("Miguel");
         cliente.setCif("42860010q");
+        //Apellidos
         cliente.getApellidos().setPrimer_apellido("Gonzalez");
         cliente.getApellidos().setSegundo_apellido("Canales");
+
+        //Asserts
+
+        //assertEquals
         Assert.assertEquals("Miguel",cliente.getNombre());
         Assert.assertEquals("42860010q",cliente.getCif());
+
+        //assertThat
         Assert.assertThat("Miguel",is(cliente.getNombre()));
         Assert.assertThat("Gonzalez Canales", is(cliente.getApellidos().getPrimer_apellido() + " " +
         cliente.getApellidos().getSegundo_apellido()));

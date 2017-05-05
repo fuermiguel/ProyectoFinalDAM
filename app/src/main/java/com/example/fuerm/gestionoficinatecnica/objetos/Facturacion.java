@@ -7,7 +7,7 @@ package com.example.fuerm.gestionoficinatecnica.objetos;
 public class Facturacion {
     private Factura factura = new Factura();
 
-    class Factura {
+    public class Factura {
         private String id_factura;
         private String cif;
         private DireccionFacturacion direccionFacturacion = new DireccionFacturacion();
@@ -21,7 +21,7 @@ public class Facturacion {
             this.direccionFacturacion = direccionFacturacion;
         }
 
-        class DireccionFacturacion{
+        public class DireccionFacturacion{
             private String pais;
             private String provincia;
             private String municipio;

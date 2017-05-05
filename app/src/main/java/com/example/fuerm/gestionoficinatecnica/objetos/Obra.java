@@ -22,7 +22,7 @@ public class Obra {
         this.direccionObra = direccionObra;
     }
 
-    class DireccionObra{
+    public class DireccionObra{
         private String pais;
         private String provincia;
         private String municipio;
