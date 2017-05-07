@@ -21,8 +21,8 @@ import java.util.Map;
  */
 
 public class Application extends AppCompatActivity {
-    public  static final String DB_NAME ="couchbaseevents";//Nombre de la base de datos
-    public static final String TAG = "couchbaseevents";//Etiqueta para mostrar los Log
+    public  static final String DB_NAME ="app_gestion_oficina_tecnica";//Nombre de la base de datos
+    public static final String TAG = "app_oficinaTecnica";//Etiqueta para mostrar los Log
     public static final String USERNAME = "miguel";//Lo podemos ver en el config.json del sync gateway
     public static final String PASSWORD = "pass";
 
@@ -51,15 +51,15 @@ public class Application extends AppCompatActivity {
                 retrievedDocument(idDocument,database).getProperties()));
 
         //Actualizamos documento y mostramos por pantallas las propiedades del documento
-        Log.d(TAG, "updatedDocument=" + String.valueOf(
-                updateDocument(idDocument,database).getProperties()));
+      //  Log.d(TAG, "updatedDocument=" + String.valueOf(
+               // updateDocument(idDocument,database).getProperties()));
 
         //Adjuntamos binario al documento
-        addAttachement(database, idDocument);
+       // addAttachement(database, idDocument);
 
         //Recuperamos el documento y comprobamos el adjunto
-        Log.d(TAG, "retrievedDocument=" + String.valueOf(
-                retrievedDocument(idDocument,database).getProperties()));
+     //   Log.d(TAG, "retrievedDocument=" + String.valueOf(
+     //           retrievedDocument(idDocument,database).getProperties()));
 
         //replicationDB = new ReplicationDB();
 
@@ -94,7 +94,8 @@ public class Application extends AppCompatActivity {
         Document document = database.createDocument();//Genera el Id de manera automatica
         String documentId = document.getId();
         Log.d(TAG,"El identificador del documento creados es " + documentId);
-        Map<String, Object> map = (Map<String, Object>) new CargaDatos();
+
+        Map<String, Object> map =  new CargaDatos().getMap();
 
         /*Cuando un documento es guardado a la base de datos, se generan dos propiedades de manera
         automatica _id(identificador de documento) y _rev(identificador de revisión) que se añaden

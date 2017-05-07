@@ -10,17 +10,17 @@ public class MainActivity extends AppCompatActivity {
 
     //Definimos unas cuantas constantes que nos servirán como etiquetas en los mensajes mostrados por consola.
 
-    final String TAG = "CouchbaseEvents";
+    final String TAG1 = "app_oficinaTecnica";
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_couch_base_event);
-        Log.d(TAG, "Comienzo de la App Couchbase Events");
+        Log.d(TAG1, "Comienzo de la App Couchbase Events");
         Intent intent = new Intent();
         intent.setClass(getApplicationContext(), Application.class);
         startActivity(intent);
-        Log.d(TAG, "Final de la App Couchbase Events");
+        Log.d(TAG1, "Final de la App Couchbase Events");
     }
 }
