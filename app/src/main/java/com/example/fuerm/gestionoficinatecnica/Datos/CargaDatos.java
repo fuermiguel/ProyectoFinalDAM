@@ -23,10 +23,13 @@ public class CargaDatos {
     private Ficha ficha;
     private Obra obra;
     private Documento documento;
+    private  String type; //Tipo de docuemnto
 
 
     //Constructor donde realizamos la carga en el Objeto map
     public CargaDatos(){
+
+        type = "plan_de_emergencia";
 
         //*********Cliente*********
         cliente = new Cliente();
