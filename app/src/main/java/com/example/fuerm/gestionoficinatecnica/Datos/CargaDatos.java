@@ -178,6 +178,9 @@ public class CargaDatos {
 
         map = new HashMap<String, Object>();
 
+        //*********Type**********
+        map.put("type",type);
+
         //**********Cliente***********
         map.put("nombre_cliente",cliente.getNombre());
         map.put("apellidos_cliente",cliente.getApellidos().getPrimer_apellido() + " " +

@@ -5,7 +5,7 @@ package com.example.fuerm.gestionoficinatecnica.objetos;
  */
 
 public class Documento {
-    private String _id;//todo mirar si esta variable es la interna automatica(nosotros haremos una personalizada)
+    private String _id;
     private String tipo;//tipo de documento.
 
 
