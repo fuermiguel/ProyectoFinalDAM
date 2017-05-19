@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
     //Definimos unas cuantas constantes que nos servirán como etiquetas en los mensajes mostrados por consola.
 
     final String TAG1 = "app_oficinaTecnica";
-    private  static final long DURACION_PANTALLA_INICIO = 3000;
+    private  static final long DURACION_PANTALLA_INICIO = 300;
 
 
     @Override
