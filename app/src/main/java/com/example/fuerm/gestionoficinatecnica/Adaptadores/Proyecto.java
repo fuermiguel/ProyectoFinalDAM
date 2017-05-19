@@ -28,7 +28,7 @@ public class Proyecto {
         this.idDrawable = idDrawable;
     }
 
-    public static Proyecto[] Proyectos = {
+    public static Proyecto[] proyectos = {
             new Proyecto("Plan de emergencia", R.drawable.plan_de_emergencia),
             new Proyecto("Ejecución vaso piscina", R.drawable.piscina),
             new Proyecto("Reclamación catastral", R.drawable.reclamacion_catastral),
@@ -41,7 +41,7 @@ public class Proyecto {
     };
 
     public static Proyecto getProyecto(int id){
-        for (Proyecto proyecto: Proyectos){
+        for (Proyecto proyecto: proyectos){
             if (proyecto.getIdDrawable() == id){
                 return  proyecto;
             }

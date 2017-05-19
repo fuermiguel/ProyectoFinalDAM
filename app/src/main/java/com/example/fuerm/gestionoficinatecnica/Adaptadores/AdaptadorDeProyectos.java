@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.fuerm.gestionoficinatecnica.R;
 
 
@@ -24,17 +25,17 @@ public class AdaptadorDeProyectos extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return Proyecto.Proyectos.length;
+        return Proyecto.proyectos.length;
     }
 
     @Override
     public Object getItem(int position) {
-        return Proyecto.Proyectos[position];
+        return Proyecto.proyectos[position];
     }
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return Proyecto.proyectos[position].getIdDrawable();
     }
 
     @Override
@@ -45,12 +46,15 @@ public class AdaptadorDeProyectos extends BaseAdapter {
             convertView = inflater.inflate(R.layout.grid_proyecto, parent, false);
         }
 
-        ImageView imagenCoche = (ImageView) convertView.findViewById(R.id.imagen_proyecto);
-        TextView nombreCoche = (TextView) convertView.findViewById(R.id.nombre_proyecto);
+        ImageView imagenProyecto = (ImageView) convertView.findViewById(R.id.imagen_proyecto);
+        TextView nombreProyecto = (TextView) convertView.findViewById(R.id.nombre_proyecto);
 
         final Proyecto item = (Proyecto) getItem(position);
-        imagenCoche.setImageResource(item.getIdDrawable());
-        nombreCoche.setText(item.getNombre());
+        Glide.with(imagenProyecto.getContext())
+                .load(Proyecto.proyectos[position].getIdDrawable())
+                .into(imagenProyecto);
+
+        nombreProyecto.setText(item.getNombre());
 
         return convertView;
     }

@@ -38,6 +38,7 @@ dependencies {
     compile 'com.couchbase.lite:couchbase-lite-android:1.4.0'
     //compile 'org.hamcrest:hamcrest-junit:2.0.0.0'
     compile 'com.android.support:multidex:1.0.1'
+    compile 'com.github.bumptech.glide:glide:3.6.1'
     testCompile 'junit:junit:4.12'
 
 

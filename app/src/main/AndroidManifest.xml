@@ -17,8 +17,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Application"></activity>
-        <activity android:name=".Primera"></activity>
+        <activity android:name=".Application" />
+        <activity android:name=".Primera" />
+        <activity android:name=".PlanEmergencia" />
+        <activity android:name=".EnConstruccion"></activity>
     </application>
 
 </manifest>
