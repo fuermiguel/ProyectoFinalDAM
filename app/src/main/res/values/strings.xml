@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Gestión Oficina Técnica</string>
+    <string name="uno">menu1</string>
+    <string name="action_buscar">buscar</string>
+    <string name="action_nuevo">nuevo</string>
+    <string name="settings">settings</string>
+    <string name="action_hecho">hecho</string>
+
 </resources>

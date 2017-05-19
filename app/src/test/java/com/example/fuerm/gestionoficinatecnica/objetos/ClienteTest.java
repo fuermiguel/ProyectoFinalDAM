@@ -5,8 +5,7 @@ package com.example.fuerm.gestionoficinatecnica.objetos;
 
 import org.junit.Test;
 import org.junit.Assert;//Este es el que usamos en JUnit4
-import static org.hamcrest.Matchers.is;//Lo usamos en combinación con Assert.assertThat
-
+import static org.hamcrest.core.Is.is;
 
 
 /**

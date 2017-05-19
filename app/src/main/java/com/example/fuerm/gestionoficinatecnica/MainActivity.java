@@ -40,7 +40,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 Intent intent = new Intent();
-                intent.setClass(getApplicationContext(), Application.class);
+                //intent.setClass(getApplicationContext(), Application.class);
+                intent.setClass(getApplicationContext(), Primera.class);
                 startActivity(intent);
             }
         };
