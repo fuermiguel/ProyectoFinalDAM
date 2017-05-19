@@ -1,5 +1,11 @@
 apply plugin: 'com.android.application'
 
+repositories {
+    maven {
+        url "https://jitpack.io"
+    }
+}
+
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
@@ -34,7 +40,7 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:25.1.1'
-
+    compile 'com.github.vijayrawatsan:android-json-form-wizard:1.0'
     compile 'com.couchbase.lite:couchbase-lite-android:1.4.0'
     //compile 'org.hamcrest:hamcrest-junit:2.0.0.0'
     compile 'com.android.support:multidex:1.0.1'
