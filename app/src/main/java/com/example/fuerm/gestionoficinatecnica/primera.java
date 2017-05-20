@@ -26,7 +26,7 @@ public class Primera extends AppCompatActivity implements AdapterView.OnItemClic
 
         setContentView(R.layout.activity_primera);
 
-        getSupportActionBar().setTitle("PLAN DE EMERGENCIA");
+        getSupportActionBar().setTitle("TIPOS DE PROYECTOS");
 
         //Usando un gridview
         GridView gridview = (GridView) findViewById(R.id.grid);
@@ -39,7 +39,7 @@ public class Primera extends AppCompatActivity implements AdapterView.OnItemClic
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_primera, menu);
+       // getMenuInflater().inflate(R.menu.menu_primera, menu);
         return true;
     }
 

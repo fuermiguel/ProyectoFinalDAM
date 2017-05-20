@@ -20,7 +20,6 @@
         </activity>
         <activity android:name=".Application" />
         <activity android:name=".Primera" />
-        <activity android:name=".PlanEmergencia" />
         <activity android:name=".EnConstruccion" />
         <activity
             android:name="com.vijay.jsonwizard.activities.JsonFormActivity"

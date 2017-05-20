@@ -14,10 +14,11 @@
         android:id="@+id/nombre_proyecto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
+        android:layout_gravity="top"
         android:maxLines="1"
         android:padding="16dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-        android:textColor="@android:color/white" />
+        android:visibility="invisible"
+        android:textColor="@android:color/primary_text_dark" />
 
 </FrameLayout>
