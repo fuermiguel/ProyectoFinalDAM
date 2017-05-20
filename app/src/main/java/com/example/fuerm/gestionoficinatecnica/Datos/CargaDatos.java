@@ -23,7 +23,7 @@ public class CargaDatos {
     private Ficha ficha;
     private Obra obra;
     private Documento documento;
-    private  String type; //Tipo de docuemnto
+    private  String type; //Tipo de documento
 
 
     //Constructor donde realizamos la carga en el Objeto map
@@ -31,7 +31,7 @@ public class CargaDatos {
 
         type = "plan_de_emergencia";
 
-        //*********Cliente*********
+        //(1)*********Cliente*********
         cliente = new Cliente();
         facturacion = new Facturacion();
         ficha = new Ficha();
@@ -45,7 +45,7 @@ public class CargaDatos {
         cliente.getApellidos().setSegundo_apellido("Canales");
         //***********Fin Cliente********
 
-        //**********Facturacion*********
+        //(2)**********Facturacion*********
         facturacion = new Facturacion();
         Facturacion.Factura factura = facturacion.getFactura();
 
@@ -61,7 +61,7 @@ public class CargaDatos {
         direccionFacturacion.setCodigo_postal(35600);
         //***********Fin Facturación*********
 
-        //*******Ficha***********************
+        //(3)*******Ficha***********************
         ficha = new Ficha();
 
         ficha.setLocalizacion("localizacion");
@@ -93,6 +93,7 @@ public class CargaDatos {
         //Fin Ambulancias
 
         //Aseos
+
 
         //00
         Ficha.Aseo aseo = ficha.getAseo();
@@ -165,7 +166,7 @@ public class CargaDatos {
         //*******Fin Carpas*****
 
 
-        //*******Obra***********
+        //(4)*******Obra***********
         obra = new Obra();
         obra.getDireccionObra().setCalle("calle");
         obra.getDireccionObra().setCodigo_postal(35600);

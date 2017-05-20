@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.Toast;
 
 import com.example.fuerm.gestionoficinatecnica.Adaptadores.AdaptadorDeProyectos;
 import com.example.fuerm.gestionoficinatecnica.Adaptadores.Proyecto;
@@ -17,7 +18,7 @@ import com.vijay.jsonwizard.activities.JsonFormActivity;
 public class Primera extends AppCompatActivity implements AdapterView.OnItemClickListener {
     private static final int    REQUEST_CODE_GET_JSON = 1;
     private static final String TAG                   = "MainActivity";
-    private static final String DATA_JSON_PATH        = "data.json";
+    private static final String DATA_JSON_PATH        = "plan_emergencia.json";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,9 +82,10 @@ public class Primera extends AppCompatActivity implements AdapterView.OnItemClic
                 break;
             default:
                 intent = new Intent(this, EnConstruccion.class);
+                startActivity(intent);
                 break;
         }
-        startActivity(intent);
+
     }
 
 
@@ -91,6 +93,7 @@ public class Primera extends AppCompatActivity implements AdapterView.OnItemClic
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_CODE_GET_JSON && resultCode == RESULT_OK) {
             Log.d(TAG, data.getStringExtra("json"));
+            Toast.makeText(this, "!!!!!!!!!" +data.getStringExtra("json"), Toast.LENGTH_LONG).show();
         }
         super.onActivityResult(requestCode, resultCode, data);
     }

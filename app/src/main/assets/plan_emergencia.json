@@ -1,0 +1,163 @@
+{
+  "count":"4",
+  "step1":{
+    "fields":[
+      {
+        "key":"label_cliente",
+        "type":"label",
+        "text":"CLIENTE"
+      },
+      {
+        "key":"nombre_cliente",
+        "type":"edit_text",
+        "hint":"Nombre",
+        "v_min_length":{  "value" : "3",
+          "err" : "Min length should be at least 3"
+        },
+        "v_max_length":{  "value" : "10",
+          "err" : "Max length can be at most 10."
+        }
+      },
+      {
+        "key":"primer_apellidoCliente",
+        "type":"edit_text",
+        "hint":"Primer Apellido",
+        "v_min_length":{  "value" : "3",
+          "err" : "Min length should be at least 3"
+        },
+        "v_max_length":{  "value" : "10",
+          "err" : "Max length can be at most 10."
+        }
+      },
+      {
+        "key":"segundo_apellidoCliente",
+        "type":"edit_text",
+        "hint":"Segundo Apellido"
+      }
+    ],
+    "title":"Step 1 of 4",
+    "next":"step2"
+  },
+  "step2":{
+    "fields":[
+      {
+        "key":"label_factura",
+        "type":"label",
+        "text":"FACTURA"
+      },
+      {
+        "key":"id_factura",
+        "type":"edit_text",
+        "hint":"ID"
+      },
+      {
+        "key":"cif_factura",
+        "type":"edit_text",
+        "hint":"CIF"
+      },
+      {
+        "key":"pais_factura",
+        "type":"edit_text",
+        "hint":"PAIS"
+      },
+      {
+        "key":"provincia_factura",
+        "type":"edit_text",
+        "hint":"PROVINCIA"
+      },
+      {
+        "key":"municipio_factura",
+        "type":"edit_text",
+        "hint":"MUNICIPIO"
+      },
+      {
+        "key":"calle_factura",
+        "type":"edit_text",
+        "hint":"CALLE"
+      },
+      {
+        "key":"cp_factura",
+        "type":"edit_text",
+        "hint":"CP"
+      }
+    ],
+    "title":"Step 2 of 4",
+    "next":"step3"
+  },
+  "step3":{
+    "fields":[
+      {
+        "key":"label_ficha",
+        "type":"label",
+        "text":"FICHA"
+      },
+      {
+        "key":"localizacion_ficha",
+        "type":"edit_text",
+        "hint":"LOCALIZACIÓN"
+      },
+      {
+        "key":"numeroParticipantes_ficha",
+        "type":"edit_text",
+        "hint":"NÚMERO DE PARTICIPANTES"
+      },
+      {
+        "key":"opciones1_ficha",
+        "type":"check_box",
+        "label":"Marcar las que correspondan",
+        "options":[
+          {
+            "key":"presenciaMenores_ficha",
+            "text":"Presencia de menores",
+            "value":"false"
+          },
+          {
+            "key":"accesibleDiscapactitados_ficha",
+            "text":"Accesibilidad a discapacitados",
+            "value":"false"
+          }
+        ]
+      },
+      {
+        "key":"tipoEvento_ficha",
+        "type":"edit_text",
+        "hint":"TIPO DE EVENTO"
+      },
+      {
+        "key":"horarioEvento_ficha",
+        "type":"edit_text",
+        "hint":"HORARIO DEL EVENTO"
+      },
+      {
+        "key":"matriculaAmbulancia_ficha",
+        "type":"edit_text",
+        "hint":"MATRICULA AMBULANCIA"
+      },
+      {
+        "key":"tipoAseo_ficha",
+        "type":"spinner",
+        "hint":"TIPO DE ASEO",
+        "values":["PORTATIL","FIJO"],
+        "v_required":{ "value" : "true",
+            "err" : "Por favor elegir un valor"}
+      },
+      {
+        "key":"localizacionAseo_ficha",
+        "type":"edit_text",
+        "hint":"HORARIO DEL EVENTO"
+      }
+    ],
+    "title":"Step 3 of 4",
+    "next":"step4"
+  },
+  "step4":{
+    "fields":[
+      {
+        "key":"anything",
+        "type":"edit_text",
+        "hint":"Enter Anything You Want"
+      }
+    ],
+    "title":"Step 4 of 4"
+  }
+}
