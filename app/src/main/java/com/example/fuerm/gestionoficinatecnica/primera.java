@@ -70,22 +70,16 @@ public class Primera extends AppCompatActivity implements AdapterView.OnItemClic
 
         switch (item.getNombre()) {
             case "Plan de emergencia":
-                // intent = new Intent(this, PlanEmergencia.class);
-                //getTheme().applyStyle(R.style.sinActionBar,true);
-                //setTheme(R.style.sinActionBar);
                 intent = new Intent(this, JsonFormActivity.class);
                 String json = CommonUtils.loadJSONFromAsset(getApplicationContext(), DATA_JSON_PATH);
                 intent.putExtra("json", json);
                 startActivityForResult(intent, REQUEST_CODE_GET_JSON);
-               // setTheme(R.style.AppTheme);
-               // getTheme().applyStyle(R.style.AppTheme,true);
                 break;
             default:
                 intent = new Intent(this, EnConstruccion.class);
                 startActivity(intent);
                 break;
         }
-
     }
 
 

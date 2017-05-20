@@ -115,6 +115,16 @@
             "key":"accesibleDiscapactitados_ficha",
             "text":"Accesibilidad a discapacitados",
             "value":"false"
+          },
+          {
+            "key":"vantaAlcohol_ficha",
+            "text":"Venta de alcohol",
+            "value":"false"
+          },
+          {
+            "key":"cortarCalle_ficha",
+            "text":"Cortar calles",
+            "value":"false"
           }
         ]
       },
@@ -134,17 +144,25 @@
         "hint":"MATRICULA AMBULANCIA"
       },
       {
+        "key":"tipoAmbulancia_ficha",
+        "type":"spinner",
+        "hint":"TIPO DE AMBULANCIA",
+        "values":["MEDICALIZADA","NORMAL"],
+        "v_required":{ "value" : "false",
+          "err" : "Por favor elegir un valor"}
+      },
+      {
         "key":"tipoAseo_ficha",
         "type":"spinner",
         "hint":"TIPO DE ASEO",
         "values":["PORTATIL","FIJO"],
-        "v_required":{ "value" : "true",
+        "v_required":{ "value" : "false",
             "err" : "Por favor elegir un valor"}
       },
       {
         "key":"localizacionAseo_ficha",
         "type":"edit_text",
-        "hint":"HORARIO DEL EVENTO"
+        "hint":"LOCALIZACIÓN ASEO"
       }
     ],
     "title":"Step 3 of 4",
@@ -153,10 +171,36 @@
   "step4":{
     "fields":[
       {
-        "key":"anything",
+        "key":"label_obra",
+        "type":"label",
+        "text":"OBRA"
+      },
+      {
+        "key":"pais_obra",
         "type":"edit_text",
-        "hint":"Enter Anything You Want"
+        "hint":"PAIS"
+      },
+      {
+        "key":"provincia_obra",
+        "type":"edit_text",
+        "hint":"PROVINCIA"
+      },
+      {
+        "key":"municipio_obra",
+        "type":"edit_text",
+        "hint":"Municipio"
+      },
+      {
+        "key":"calle_obra",
+        "type":"edit_text",
+        "hint":"Calle"
+      },
+      {
+        "key":"cp_obra",
+        "type":"edit_text",
+        "hint":"CP"
       }
+
     ],
     "title":"Step 4 of 4"
   }
