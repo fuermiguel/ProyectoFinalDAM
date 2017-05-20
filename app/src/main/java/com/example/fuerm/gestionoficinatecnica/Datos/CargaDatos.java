@@ -1,11 +1,16 @@
 package com.example.fuerm.gestionoficinatecnica.Datos;
 
+import android.util.Log;
+
 import com.example.fuerm.gestionoficinatecnica.objetos.Cliente;
 import com.example.fuerm.gestionoficinatecnica.objetos.Documento;
 import com.example.fuerm.gestionoficinatecnica.objetos.Facturacion;
 import com.example.fuerm.gestionoficinatecnica.objetos.Ficha;
 import com.example.fuerm.gestionoficinatecnica.objetos.Obra;
 
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,10 +29,13 @@ public class CargaDatos {
     private Obra obra;
     private Documento documento;
     private  String type; //Tipo de documento
+    private JSONObject data; //Objeto JSON
 
 
     //Constructor donde realizamos la carga en el Objeto map
-    public CargaDatos(){
+    public CargaDatos(JSONObject data) throws JSONException {
+
+        this.data = data;
 
         type = "plan_de_emergencia";
 
@@ -37,7 +45,9 @@ public class CargaDatos {
         ficha = new Ficha();
         obra = new Obra();
 
-        cliente.setNombre("Miguel");
+        Log.d("app_oficinaTecnica",data.getJSONObject("step1").getJSONArray("fields").getJSONObject(1).getString("value"));
+
+        cliente.setNombre("miguel");
         cliente.setCif("42860010q");
 
         //Apellidos
