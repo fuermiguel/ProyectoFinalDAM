@@ -93,8 +93,13 @@ public class CargaDatos {
                 data.getJSONObject("step2").getJSONArray("fields").getJSONObject(5).getString("value"));
         direccionFacturacion.setCalle(
                 data.getJSONObject("step2").getJSONArray("fields").getJSONObject(6).getString("value"));
-        direccionFacturacion.setCodigo_postal(Integer.parseInt(
-                data.getJSONObject("step2").getJSONArray("fields").getJSONObject(7).getString("value")));
+        if(data.getJSONObject("step2").getJSONArray("fields").getJSONObject(7).getString("value").equals("")){
+            direccionFacturacion.setCodigo_postal(00000);
+        }else{
+            direccionFacturacion.setCodigo_postal(Integer.parseInt(
+                    data.getJSONObject("step2").getJSONArray("fields").getJSONObject(7).getString("value")));
+        }
+
 
         //***********Fin Facturación*********
 
@@ -104,8 +109,13 @@ public class CargaDatos {
 
         ficha.setLocalizacion(
                 data.getJSONObject("step3").getJSONArray("fields").getJSONObject(1).getString("value"));
-        ficha.setNumero_participantes(
-                Integer.parseInt(data.getJSONObject("step3").getJSONArray("fields").getJSONObject(2).getString("value")));
+        if(data.getJSONObject("step3").getJSONArray("fields").getJSONObject(2).getString("value").equals("")){
+            ficha.setNumero_participantes(0000);
+        }else{
+            ficha.setNumero_participantes(
+                    Integer.parseInt(data.getJSONObject("step3").getJSONArray("fields").getJSONObject(2).getString("value")));
+        }
+
         ficha.setPresencia_menores(Boolean.parseBoolean(
                 data.getJSONObject("step3").getJSONArray("fields").getJSONObject(3).getJSONArray("options").getJSONObject(0).getString("value")));
         ficha.setAccesible_discapacitados(Boolean.parseBoolean(
@@ -233,8 +243,13 @@ public class CargaDatos {
                 data.getJSONObject("step4").getJSONArray("fields").getJSONObject(3).getString("value"));
         obra.getDireccionObra().setCalle(
                 data.getJSONObject("step4").getJSONArray("fields").getJSONObject(4).getString("value"));
-        obra.getDireccionObra().setCodigo_postal(Integer.parseInt(
-                data.getJSONObject("step4").getJSONArray("fields").getJSONObject(5).getString("value")));
+        if(data.getJSONObject("step4").getJSONArray("fields").getJSONObject(5).getString("value").equals("")){
+            obra.getDireccionObra().setCodigo_postal(00000);
+        }else{
+            obra.getDireccionObra().setCodigo_postal(Integer.parseInt(
+                    data.getJSONObject("step4").getJSONArray("fields").getJSONObject(5).getString("value")));
+        }
+
 
         //*******Fin Obra*******
 

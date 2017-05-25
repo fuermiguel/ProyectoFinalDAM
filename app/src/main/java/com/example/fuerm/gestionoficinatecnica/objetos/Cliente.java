@@ -5,11 +5,11 @@ package com.example.fuerm.gestionoficinatecnica.objetos;
  */
 
 public class Cliente {
-    private String cif; //Obligatorio
-    private String nombre; //Obligatorio
+    private String cif;
+    private String nombre;
     private int telefono_fijo;
     private int telefono_movil;
-    private Apellidos apellidos = new Apellidos(); //obligatorio
+    private Apellidos apellidos = new Apellidos();
     private DireccionCliente direccionCliente = new DireccionCliente();
 
     public class Apellidos{
