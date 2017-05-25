@@ -12,8 +12,11 @@ import com.example.fuerm.gestionoficinatecnica.objetos.Obra;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 /**
  * Created by fuerm on 05/05/2017.
@@ -30,6 +33,8 @@ public class CargaDatos {
     private Documento documento;
     private  String type; //Tipo de documento
     private JSONObject data; //Objeto JSON
+    private String docId;//Identificador del proyecto
+    private Date fecha_actual;
 
 
     //Constructor donde realizamos la carga en el Objeto map
@@ -39,55 +44,88 @@ public class CargaDatos {
 
         type = "plan_de_emergencia";
 
+        fecha_actual = new Date();
+
+        SimpleDateFormat formateador = new SimpleDateFormat("dd-MM-yyyy");
+
+
+        docId =
+                data.getJSONObject("step1").getJSONArray("fields").getJSONObject(1).getString("value") + "." + UUID.randomUUID() + "---"+ formateador.format(fecha_actual);
+
         //(1)*********Cliente*********
         cliente = new Cliente();
         facturacion = new Facturacion();
         ficha = new Ficha();
         obra = new Obra();
 
-        Log.d("app_oficinaTecnica",data.getJSONObject("step1").getJSONArray("fields").getJSONObject(1).getString("value"));
+        Log.d("app_oficinaTecnica",
+                data.getJSONObject("step1").getJSONArray("fields").getJSONObject(1).getString("value"));
 
-        cliente.setNombre("miguel");
+        cliente.setNombre(
+                data.getJSONObject("step1").getJSONArray("fields").getJSONObject(1).getString("value"));
         cliente.setCif("42860010q");
 
         //Apellidos
-        cliente.getApellidos().setPrimer_apellido("Gonzalez");
-        cliente.getApellidos().setSegundo_apellido("Canales");
+        cliente.getApellidos().setPrimer_apellido(
+                data.getJSONObject("step1").getJSONArray("fields").getJSONObject(2).getString("value"));
+        cliente.getApellidos().setSegundo_apellido(
+                data.getJSONObject("step1").getJSONArray("fields").getJSONObject(3).getString("value"));
+
         //***********Fin Cliente********
 
         //(2)**********Facturacion*********
+
         facturacion = new Facturacion();
         Facturacion.Factura factura = facturacion.getFactura();
 
-        factura.setId_factura("1A");
-        factura.setCif("42860010q");
+        factura.setId_factura(
+                data.getJSONObject("step2").getJSONArray("fields").getJSONObject(1).getString("value"));
+        factura.setCif(
+                data.getJSONObject("step2").getJSONArray("fields").getJSONObject(2).getString("value"));
 
         Facturacion.Factura.DireccionFacturacion direccionFacturacion = factura.getDireccionFacturacion();
 
-        direccionFacturacion.setPais("pais");
-        direccionFacturacion.setProvincia("provincia");
-        direccionFacturacion.setMunicipio("municipio");
-        direccionFacturacion.setCalle("calle");
-        direccionFacturacion.setCodigo_postal(35600);
+        direccionFacturacion.setPais(
+                data.getJSONObject("step2").getJSONArray("fields").getJSONObject(3).getString("value"));
+        direccionFacturacion.setProvincia(
+                data.getJSONObject("step2").getJSONArray("fields").getJSONObject(4).getString("value"));
+        direccionFacturacion.setMunicipio(
+                data.getJSONObject("step2").getJSONArray("fields").getJSONObject(5).getString("value"));
+        direccionFacturacion.setCalle(
+                data.getJSONObject("step2").getJSONArray("fields").getJSONObject(6).getString("value"));
+        direccionFacturacion.setCodigo_postal(Integer.parseInt(
+                data.getJSONObject("step2").getJSONArray("fields").getJSONObject(7).getString("value")));
+
         //***********Fin Facturación*********
 
         //(3)*******Ficha***********************
+
         ficha = new Ficha();
 
-        ficha.setLocalizacion("localizacion");
-        ficha.setNumero_participantes(100);
-        ficha.setPresencia_menores(true);
-        ficha.setAccesible_discapacitados(true);
-        ficha.setTipo_evento("festivo");
-        ficha.setHorario("de 10:00 a 11:00");
+        ficha.setLocalizacion(
+                data.getJSONObject("step3").getJSONArray("fields").getJSONObject(1).getString("value"));
+        ficha.setNumero_participantes(
+                Integer.parseInt(data.getJSONObject("step3").getJSONArray("fields").getJSONObject(2).getString("value")));
+        ficha.setPresencia_menores(Boolean.parseBoolean(
+                data.getJSONObject("step3").getJSONArray("fields").getJSONObject(3).getJSONArray("options").getJSONObject(0).getString("value")));
+        ficha.setAccesible_discapacitados(Boolean.parseBoolean(
+                data.getJSONObject("step3").getJSONArray("fields").getJSONObject(3).getJSONArray("options").getJSONObject(1).getString("value")));
+        ficha.setTipo_evento(
+                data.getJSONObject("step3").getJSONArray("fields").getJSONObject(4).getString("value"));
+        ficha.setHorario(
+                data.getJSONObject("step3").getJSONArray("fields").getJSONObject(5).getString("value"));
 
         //Ambulancias
 
         //00
         Ficha.Ambulancia ambulancia = ficha.getAmbulancia();
-        ambulancia.setMatricula("0000A");
-        ambulancia.setTipo("medicalizada");
+        ambulancia.setMatricula(
+                data.getJSONObject("step3").getJSONArray("fields").getJSONObject(6).getString("value"));
+        ambulancia.setTipo(
+                data.getJSONObject("step3").getJSONArray("fields").getJSONObject(7).getString("value"));
+
         ficha.setAmbulancia(ambulancia);
+        /**
         //01
         Ficha.Ambulancia ambulancia1 = ficha.getAmbulancia();
         ambulancia1.setMatricula("0001A");
@@ -98,8 +136,10 @@ public class CargaDatos {
         ambulancia2.setMatricula("0002A");
         ambulancia2.setTipo("medicalizada");
         ficha.setAmbulancia(ambulancia2);
+         **/
 
-        ficha.setVenta_alcohol(false);
+        ficha.setVenta_alcohol(Boolean.parseBoolean(
+                data.getJSONObject("step3").getJSONArray("fields").getJSONObject(3).getJSONArray("options").getJSONObject(2).getString("value")));
         //Fin Ambulancias
 
         //Aseos
@@ -107,10 +147,15 @@ public class CargaDatos {
 
         //00
         Ficha.Aseo aseo = ficha.getAseo();
-        aseo.setTipo("portatil");
-        aseo.setLocalizacion("localizacion00");
+        aseo.setTipo(
+                data.getJSONObject("step3").getJSONArray("fields").getJSONObject(8).getString("value"));
+        aseo.setLocalizacion(
+                data.getJSONObject("step3").getJSONArray("fields").getJSONObject(9).getString("value"));
+
         ficha.setAseo(aseo);
 
+
+/**
         //01
         Ficha.Aseo aseo1 = ficha.getAseo();
         aseo1.setTipo("fijo");
@@ -121,6 +166,7 @@ public class CargaDatos {
         ficha.setCortar_calles(true);
         //Fin Aseos
 
+**/
         //Hinchables
 
         //00
@@ -171,18 +217,25 @@ public class CargaDatos {
         datosResponsable_carpa.setCif("42860010q");
         datosResponsable_carpa.setTelefono_fijo(928888889);
         datosResponsable_carpa.setTelefono_movil(637777778);
+
         //Añadimos Carpa a la lista
         ficha.setCarpa(carpa);
         //*******Fin Carpas*****
 
-
         //(4)*******Obra***********
+
         obra = new Obra();
-        obra.getDireccionObra().setCalle("calle");
-        obra.getDireccionObra().setCodigo_postal(35600);
-        obra.getDireccionObra().setMunicipio("municipio");
-        obra.getDireccionObra().setPais("pais");
-        obra.getDireccionObra().setProvincia("provincia");
+        obra.getDireccionObra().setPais(
+                data.getJSONObject("step4").getJSONArray("fields").getJSONObject(1).getString("value"));
+        obra.getDireccionObra().setProvincia(
+                data.getJSONObject("step4").getJSONArray("fields").getJSONObject(2).getString("value"));
+        obra.getDireccionObra().setMunicipio(
+                data.getJSONObject("step4").getJSONArray("fields").getJSONObject(3).getString("value"));
+        obra.getDireccionObra().setCalle(
+                data.getJSONObject("step4").getJSONArray("fields").getJSONObject(4).getString("value"));
+        obra.getDireccionObra().setCodigo_postal(Integer.parseInt(
+                data.getJSONObject("step4").getJSONArray("fields").getJSONObject(5).getString("value")));
+
         //*******Fin Obra*******
 
 //**********************************************************************
@@ -192,10 +245,14 @@ public class CargaDatos {
         //*********Type**********
         map.put("type",type);
 
+        //*********docId**********
+        map.put("docId",docId);
+
         //**********Cliente***********
         map.put("nombre_cliente",cliente.getNombre());
         map.put("apellidos_cliente",cliente.getApellidos().getPrimer_apellido() + " " +
                 cliente.getApellidos().getSegundo_apellido());
+        map.put("cif_cliente",cliente.getCif());
 
         //*********Facturación**************
         map.put("id_factura", factura.getId_factura());
