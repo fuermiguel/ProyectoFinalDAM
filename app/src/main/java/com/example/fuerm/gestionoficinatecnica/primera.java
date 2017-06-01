@@ -37,7 +37,7 @@ public class Primera extends AppCompatActivity implements AdapterView.OnItemClic
     private static final int   REQUEST_CODE_GET_JSON  = 1;
     private static final String DATA_JSON_PATH        = "plan_emergencia.json";//Plantilla wizard formulario
 
-    //Variables para el manejo de la base de datos
+    //Variables para el manejo de la base de datos.
     Manager manager;
     Database database;
     String idDocument ;
