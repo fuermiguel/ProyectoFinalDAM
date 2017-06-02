@@ -3,8 +3,6 @@ package com.example.fuerm.gestionoficinatecnica.objetos;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.hamcrest.Matchers.is;
-
 /**
  * Created by fuerm on 02/05/2017.
  */
@@ -35,12 +33,12 @@ public class FacturacionTest {
         Assert.assertEquals("calle",factura.getDireccionFacturacion().getCalle());
 
         //Otra manera de hacer el test
-        Assert.assertThat("pais provincia municipio calle 35600",
+        /*Assert.assertThat("pais provincia municipio calle 35600",
                 is(direccionFacturacion.getPais() + " " +
                         direccionFacturacion.getProvincia() + " " +
                         direccionFacturacion.getMunicipio() + " " +
                         direccionFacturacion.getCalle()+ " " +
-                        direccionFacturacion.getCodigo_postal()));
+                        direccionFacturacion.getCodigo_postal()));*/
 
     }
 }
